@@ -117,7 +117,7 @@ Benchmark author and maintainer: [Dililianxice](https://github.com/Dililianxice)
 
 If you reuse this benchmark, cite this repository, the original study, and the dataset:
 
-> Dililianxice (2026). *Inner-Speech Trigger Benchmark* (v0.1.0). GitHub repository.
+> Dililianxice (2026). *Jev × Inner-Speech BCI* (v0.1.0). GitHub repository.
 
 > Kunz, E., Abramovich Krasa, B., Kamdar, F., et al. (2025). *Inner speech in motor cortex and implications for speech neuroprostheses*. Cell. https://doi.org/10.1016/j.cell.2025.06.015
 
