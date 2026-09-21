@@ -1,18 +1,19 @@
 cff-version: 1.2.0
 message: "If you use this benchmark, please cite the benchmark, source study, and Dryad dataset."
-title: "Inner-Speech Trigger Benchmark"
+title: "Jev × Inner-Speech BCI"
 type: software
 version: 0.1.0
 date-released: 2026-09-21
 authors:
   - family-names: "Dililianxice"
-repository-code: "https://github.com/Dililianxice/inner-speech-trigger-benchmark"
+repository-code: "https://github.com/Dililianxice/jev-inner-speech-bci"
 license: MIT
 keywords:
   - brain-computer interface
   - inner speech
   - intracortical decoding
   - autonomous triggering
+  - Jev
   - reproducibility
 references:
   - type: article
