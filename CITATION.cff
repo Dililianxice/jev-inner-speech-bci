@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite the benchmark, source study, and Dryad dataset."
+title: "Inner-Speech Trigger Benchmark"
+type: software
+version: 0.1.0
+date-released: 2026-09-21
+authors:
+  - family-names: "Dililianxice"
+repository-code: "https://github.com/Dililianxice/inner-speech-trigger-benchmark"
+license: MIT
+keywords:
+  - brain-computer interface
+  - inner speech
+  - intracortical decoding
+  - autonomous triggering
+  - reproducibility
+references:
+  - type: article
+    title: "Inner speech in motor cortex and implications for speech neuroprostheses"
+    authors:
+      - family-names: "Kunz"
+        given-names: "Erin"
+    doi: "10.1016/j.cell.2025.06.015"
+    year: 2025
+  - type: dataset
+    title: "Inner speech in motor cortex and implications for speech neuroprostheses"
+    authors:
+      - family-names: "Kunz"
+        given-names: "Erin"
+    doi: "10.5061/dryad.gf1vhhn1j"
+    year: 2025

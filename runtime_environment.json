@@ -1,0 +1,19 @@
+{
+  "python": "3.11.9",
+  "implementation": "CPython",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "machine": "x86_64",
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.8.4",
+    "threadpoolctl": "3.5.0"
+  },
+  "numeric_libraries": [
+    {"user_api": "blas", "internal_api": "mkl", "prefix": "libmkl_rt", "version": "2023.1-Product", "threading_layer": "intel"},
+    {"user_api": "openmp", "internal_api": "openmp", "prefix": "libomp"},
+    {"user_api": "openmp", "internal_api": "openmp", "prefix": "libgomp"}
+  ],
+  "thread_limit_during_model_fitting": 1
+}

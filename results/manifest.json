@@ -1,0 +1,53 @@
+{
+  "config": {
+    "features": "All binnedTX channels, rates; exclude spikePow in all participants because T12 duplicate; no region selection",
+    "split": "Last max(1,floor(.2*nblocks)) blocks test; preceding one validation; all earlier blocks train; no refit with validation",
+    "models": [
+      "shrinkage_lda",
+      "diagonal_lda"
+    ],
+    "windows": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "primary_seconds": 0.5,
+    "rounding": "floor bins: requested250ms is240ms for20ms data",
+    "tasks": [
+      "imagined_word",
+      "attempted_word",
+      "listening_word",
+      "behavior"
+    ],
+    "priors": "Equal per class; scores not calibrated probabilities",
+    "temporal_indexing": "MATLAB inclusive epochs [s,e] -> Python [s-1,e); T12 listening aligns to DELAY as author Fig5_ABCD; all others GO. First bin included; latency relative to event-bin edge, not subjective onset",
+    "null": "49 train-label permutations within original blocks, 500ms only; other tasks and test labels untouched; diagnostic, not adjusted confirmatory p-values",
+    "stream": "Fixed500ms cue-condition classifier and imagined-word classifier, trained on first500ms source-aligned epoch features; update100ms within each block; no trial boundary resets",
+    "trigger": "two consecutive same imagined word with behavior argmax imagined and score>=threshold; disarm until two nonimagined argmax updates AND1s refractory",
+    "thresholds": [
+      0.0,
+      0.5,
+      0.7,
+      0.9,
+      0.99,
+      1.01
+    ],
+    "selection": "Validation only: <=1 event/min across all recorded time outside imagined GO epochs AND zero imagined-go duplicates; maximize correct first word within1s / all imagined trials; tie lowest threshold; 1.01 mute candidate",
+    "stream_scoring": "First event in each imagined GO epoch determines outcome; fast<=1s, late separate; all trials denominator. False-output exposure is every recorded bin outside imagined GO epochs, including delays, ITIs, and attempted/listening/idle epochs. Source-aligned condition counts remain diagnostic. Attempted speech is non-target only under this imagined-only channel design, not absence of intention",
+    "limitations": [
+      "Go-relative decoding, not spontaneous thought onset",
+      "Behavior is cued task condition, not isolated volition",
+      "Released-bin extraction causal, upstream reference/filter/threshold calibration not verified causal",
+      "Sparse do-nothing exposure; no daily-use false activation guarantee",
+      "One day per participant; no cross-day transfer"
+    ],
+    "seed": 20260921
+  },
+  "files": {
+    "t12.2024.04.11_interleavedVerbalBehaviors_raw.mat": "6c930af5fd0e23a7ccaece3d21a42897257ff9f4db49cbec1119f5cca077e708",
+    "t15.2024.06.14_interleavedVerbalBehaviors_raw.mat": "2394720e9e7d01cb744f1c084f120105fdc7e1f989a70770087438b2e9452674",
+    "t16.2024.07.17_interleavedVerbalBehaviors_raw.mat": "1c87b735512b830a8464c31cd2212235f389c54a9b9c1e4561566ae1e99201c3",
+    "t17.2024.12.09_interleavedVerbalBehaviors_raw.mat": "4572c72ff72b4c08c912b10512d1e5945172a15935892cc6258c5e1dd2f36a8e"
+  },
+  "code_sha256": "8f3354779a069fdc30e57f1d5a06d710216e74ea590aecd0bac2aba250f550f4"
+}

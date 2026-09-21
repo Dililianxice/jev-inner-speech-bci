@@ -1,0 +1,1575 @@
+[
+  {
+    "subject": "t12",
+    "dt": 0.02,
+    "channels": 128,
+    "arrays": [
+      "i6v",
+      "s6v"
+    ],
+    "split": {
+      "train": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "validation": [
+        12
+      ],
+      "test": [
+        13,
+        14
+      ]
+    },
+    "cues": [
+      {
+        "code": 1,
+        "text": "DO_NOTHING$0",
+        "behavior": "idle",
+        "word": ""
+      },
+      {
+        "code": 2,
+        "text": "ban$0",
+        "behavior": "listening",
+        "word": "ban"
+      },
+      {
+        "code": 3,
+        "text": "ban\\n(attempted)$1",
+        "behavior": "attempted",
+        "word": "ban"
+      },
+      {
+        "code": 4,
+        "text": "ban\\n(imagined)$1",
+        "behavior": "imagined",
+        "word": "ban"
+      },
+      {
+        "code": 5,
+        "text": "choice$0",
+        "behavior": "listening",
+        "word": "choice"
+      },
+      {
+        "code": 6,
+        "text": "choice\\n(attempted)$1",
+        "behavior": "attempted",
+        "word": "choice"
+      },
+      {
+        "code": 7,
+        "text": "choice\\n(imagined)$1",
+        "behavior": "imagined",
+        "word": "choice"
+      },
+      {
+        "code": 8,
+        "text": "day$0",
+        "behavior": "listening",
+        "word": "day"
+      },
+      {
+        "code": 9,
+        "text": "day\\n(attempted)$1",
+        "behavior": "attempted",
+        "word": "day"
+      },
+      {
+        "code": 10,
+        "text": "day\\n(imagined)$1",
+        "behavior": "imagined",
+        "word": "day"
+      },
+      {
+        "code": 11,
+        "text": "feel$0",
+        "behavior": "listening",
+        "word": "feel"
+      },
+      {
+        "code": 12,
+        "text": "feel\\n(attempted)$1",
+        "behavior": "attempted",
+        "word": "feel"
+      },
+      {
+        "code": 13,
+        "text": "feel\\n(imagined)$1",
+        "behavior": "imagined",
+        "word": "feel"
+      },
+      {
+        "code": 14,
+        "text": "kite$0",
+        "behavior": "listening",
+        "word": "kite"
+      },
+      {
+        "code": 15,
+        "text": "kite\\n(attempted)$1",
+        "behavior": "attempted",
+        "word": "kite"
+      },
+      {
+        "code": 16,
+        "text": "kite\\n(imagined)$1",
+        "behavior": "imagined",
+        "word": "kite"
+      },
+      {
+        "code": 17,
+        "text": "though$0",
+        "behavior": "listening",
+        "word": "though"
+      },
+      {
+        "code": 18,
+        "text": "though\\n(attempted)$1",
+        "behavior": "attempted",
+        "word": "though"
+      },
+      {
+        "code": 19,
+        "text": "though\\n(imagined)$1",
+        "behavior": "imagined",
+        "word": "though"
+      },
+      {
+        "code": 20,
+        "text": "were$0",
+        "behavior": "listening",
+        "word": "were"
+      },
+      {
+        "code": 21,
+        "text": "were\\n(attempted)$1",
+        "behavior": "attempted",
+        "word": "were"
+      },
+      {
+        "code": 22,
+        "text": "were\\n(imagined)$1",
+        "behavior": "imagined",
+        "word": "were"
+      }
+    ],
+    "coverage": [
+      {
+        "part": "train",
+        "block": 5,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.04
+      },
+      {
+        "part": "train",
+        "block": 5,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 45.42
+      },
+      {
+        "part": "train",
+        "block": 5,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 25.2
+      },
+      {
+        "part": "train",
+        "block": 5,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0200000000000005
+      },
+      {
+        "part": "train",
+        "block": 6,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 45.32
+      },
+      {
+        "part": "train",
+        "block": 6,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.0
+      },
+      {
+        "part": "train",
+        "block": 6,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 31.44
+      },
+      {
+        "part": "train",
+        "block": 6,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0
+      },
+      {
+        "part": "train",
+        "block": 7,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.04
+      },
+      {
+        "part": "train",
+        "block": 7,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.02
+      },
+      {
+        "part": "train",
+        "block": 7,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 25.28
+      },
+      {
+        "part": "train",
+        "block": 7,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0
+      },
+      {
+        "part": "train",
+        "block": 8,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 45.36
+      },
+      {
+        "part": "train",
+        "block": 8,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.08
+      },
+      {
+        "part": "train",
+        "block": 8,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 31.400000000000002
+      },
+      {
+        "part": "train",
+        "block": 8,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0
+      },
+      {
+        "part": "train",
+        "block": 9,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.04
+      },
+      {
+        "part": "train",
+        "block": 9,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.06
+      },
+      {
+        "part": "train",
+        "block": 9,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 31.48
+      },
+      {
+        "part": "train",
+        "block": 9,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0
+      },
+      {
+        "part": "train",
+        "block": 10,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 45.32
+      },
+      {
+        "part": "train",
+        "block": 10,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.12
+      },
+      {
+        "part": "train",
+        "block": 10,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 25.22
+      },
+      {
+        "part": "train",
+        "block": 10,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0
+      },
+      {
+        "part": "train",
+        "block": 11,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.06
+      },
+      {
+        "part": "train",
+        "block": 11,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 45.4
+      },
+      {
+        "part": "train",
+        "block": 11,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 31.12
+      },
+      {
+        "part": "train",
+        "block": 11,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0
+      },
+      {
+        "part": "validation",
+        "block": 12,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.02
+      },
+      {
+        "part": "validation",
+        "block": 12,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 45.38
+      },
+      {
+        "part": "validation",
+        "block": 12,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 25.26
+      },
+      {
+        "part": "validation",
+        "block": 12,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0
+      },
+      {
+        "part": "test",
+        "block": 13,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.04
+      },
+      {
+        "part": "test",
+        "block": 13,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.04
+      },
+      {
+        "part": "test",
+        "block": 13,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 25.240000000000002
+      },
+      {
+        "part": "test",
+        "block": 13,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0
+      },
+      {
+        "part": "test",
+        "block": 14,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.06
+      },
+      {
+        "part": "test",
+        "block": 14,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 45.42
+      },
+      {
+        "part": "test",
+        "block": 14,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "delay",
+        "epoch_seconds": 25.2
+      },
+      {
+        "part": "test",
+        "block": 14,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0
+      }
+    ]
+  },
+  {
+    "subject": "t15",
+    "dt": 0.01,
+    "channels": 256,
+    "arrays": [
+      "i6v",
+      "M1",
+      "55b",
+      "s6v"
+    ],
+    "split": {
+      "train": [
+        3,
+        4,
+        5
+      ],
+      "validation": [
+        7
+      ],
+      "test": [
+        8
+      ]
+    },
+    "cues": [
+      {
+        "code": 1,
+        "text": "DO_NOTHING",
+        "behavior": "idle",
+        "word": ""
+      },
+      {
+        "code": 2,
+        "text": "ban (attempted)",
+        "behavior": "attempted",
+        "word": "ban"
+      },
+      {
+        "code": 3,
+        "text": "ban (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "ban"
+      },
+      {
+        "code": 4,
+        "text": "ban (passivelistening)",
+        "behavior": "listening",
+        "word": "ban"
+      },
+      {
+        "code": 5,
+        "text": "choice (attempted)",
+        "behavior": "attempted",
+        "word": "choice"
+      },
+      {
+        "code": 6,
+        "text": "choice (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "choice"
+      },
+      {
+        "code": 7,
+        "text": "choice (passivelistening)",
+        "behavior": "listening",
+        "word": "choice"
+      },
+      {
+        "code": 8,
+        "text": "day (attempted)",
+        "behavior": "attempted",
+        "word": "day"
+      },
+      {
+        "code": 9,
+        "text": "day (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "day"
+      },
+      {
+        "code": 10,
+        "text": "day (passivelistening)",
+        "behavior": "listening",
+        "word": "day"
+      },
+      {
+        "code": 11,
+        "text": "feel (attempted)",
+        "behavior": "attempted",
+        "word": "feel"
+      },
+      {
+        "code": 12,
+        "text": "feel (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "feel"
+      },
+      {
+        "code": 13,
+        "text": "feel (passivelistening)",
+        "behavior": "listening",
+        "word": "feel"
+      },
+      {
+        "code": 14,
+        "text": "kite (attempted)",
+        "behavior": "attempted",
+        "word": "kite"
+      },
+      {
+        "code": 15,
+        "text": "kite (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "kite"
+      },
+      {
+        "code": 16,
+        "text": "kite (passivelistening)",
+        "behavior": "listening",
+        "word": "kite"
+      },
+      {
+        "code": 17,
+        "text": "though (attempted)",
+        "behavior": "attempted",
+        "word": "though"
+      },
+      {
+        "code": 18,
+        "text": "though (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "though"
+      },
+      {
+        "code": 19,
+        "text": "though (passivelistening)",
+        "behavior": "listening",
+        "word": "though"
+      },
+      {
+        "code": 20,
+        "text": "were (attempted)",
+        "behavior": "attempted",
+        "word": "were"
+      },
+      {
+        "code": 21,
+        "text": "were (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "were"
+      },
+      {
+        "code": 22,
+        "text": "were (passivelistening)",
+        "behavior": "listening",
+        "word": "were"
+      }
+    ],
+    "coverage": [
+      {
+        "part": "train",
+        "block": 3,
+        "state": "imagined",
+        "trials": 28,
+        "alignment": "go",
+        "epoch_seconds": 84.36
+      },
+      {
+        "part": "train",
+        "block": 3,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.18
+      },
+      {
+        "part": "train",
+        "block": 3,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 42.160000000000004
+      },
+      {
+        "part": "train",
+        "block": 3,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 6.0200000000000005
+      },
+      {
+        "part": "train",
+        "block": 4,
+        "state": "imagined",
+        "trials": 70,
+        "alignment": "go",
+        "epoch_seconds": 210.82
+      },
+      {
+        "part": "train",
+        "block": 4,
+        "state": "attempted",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.4
+      },
+      {
+        "part": "train",
+        "block": 4,
+        "state": "listening",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.44
+      },
+      {
+        "part": "train",
+        "block": 4,
+        "state": "idle",
+        "trials": 5,
+        "alignment": "go",
+        "epoch_seconds": 15.07
+      },
+      {
+        "part": "train",
+        "block": 5,
+        "state": "imagined",
+        "trials": 70,
+        "alignment": "go",
+        "epoch_seconds": 211.34
+      },
+      {
+        "part": "train",
+        "block": 5,
+        "state": "attempted",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.43
+      },
+      {
+        "part": "train",
+        "block": 5,
+        "state": "listening",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.38
+      },
+      {
+        "part": "train",
+        "block": 5,
+        "state": "idle",
+        "trials": 5,
+        "alignment": "go",
+        "epoch_seconds": 15.05
+      },
+      {
+        "part": "validation",
+        "block": 7,
+        "state": "imagined",
+        "trials": 70,
+        "alignment": "go",
+        "epoch_seconds": 210.8
+      },
+      {
+        "part": "validation",
+        "block": 7,
+        "state": "attempted",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.44
+      },
+      {
+        "part": "validation",
+        "block": 7,
+        "state": "listening",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.43
+      },
+      {
+        "part": "validation",
+        "block": 7,
+        "state": "idle",
+        "trials": 5,
+        "alignment": "go",
+        "epoch_seconds": 15.07
+      },
+      {
+        "part": "test",
+        "block": 8,
+        "state": "imagined",
+        "trials": 70,
+        "alignment": "go",
+        "epoch_seconds": 210.83
+      },
+      {
+        "part": "test",
+        "block": 8,
+        "state": "attempted",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.39
+      },
+      {
+        "part": "test",
+        "block": 8,
+        "state": "listening",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.39
+      },
+      {
+        "part": "test",
+        "block": 8,
+        "state": "idle",
+        "trials": 5,
+        "alignment": "go",
+        "epoch_seconds": 15.07
+      }
+    ]
+  },
+  {
+    "subject": "t16",
+    "dt": 0.02,
+    "channels": 256,
+    "arrays": [
+      "PEF",
+      "ventral6v",
+      "6d"
+    ],
+    "split": {
+      "train": [
+        3,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "validation": [
+        12
+      ],
+      "test": [
+        13,
+        14
+      ]
+    },
+    "cues": [
+      {
+        "code": 1,
+        "text": "(DONOTHING),",
+        "behavior": "idle",
+        "word": ""
+      },
+      {
+        "code": 2,
+        "text": "ban,(imagined)",
+        "behavior": "imagined",
+        "word": "ban"
+      },
+      {
+        "code": 3,
+        "text": "ban,(mimed)",
+        "behavior": "attempted",
+        "word": "ban"
+      },
+      {
+        "code": 4,
+        "text": "ban,listen",
+        "behavior": "listening",
+        "word": "ban"
+      },
+      {
+        "code": 5,
+        "text": "choice,(imagined)",
+        "behavior": "imagined",
+        "word": "choice"
+      },
+      {
+        "code": 6,
+        "text": "choice,(mimed)",
+        "behavior": "attempted",
+        "word": "choice"
+      },
+      {
+        "code": 7,
+        "text": "choice,listen",
+        "behavior": "listening",
+        "word": "choice"
+      },
+      {
+        "code": 8,
+        "text": "day,(imagined)",
+        "behavior": "imagined",
+        "word": "day"
+      },
+      {
+        "code": 9,
+        "text": "day,(mimed)",
+        "behavior": "attempted",
+        "word": "day"
+      },
+      {
+        "code": 10,
+        "text": "day,listen",
+        "behavior": "listening",
+        "word": "day"
+      },
+      {
+        "code": 11,
+        "text": "feel,(imagined)",
+        "behavior": "imagined",
+        "word": "feel"
+      },
+      {
+        "code": 12,
+        "text": "feel,(mimed)",
+        "behavior": "attempted",
+        "word": "feel"
+      },
+      {
+        "code": 13,
+        "text": "feel,listen",
+        "behavior": "listening",
+        "word": "feel"
+      },
+      {
+        "code": 14,
+        "text": "kite,(imagined)",
+        "behavior": "imagined",
+        "word": "kite"
+      },
+      {
+        "code": 15,
+        "text": "kite,(mimed)",
+        "behavior": "attempted",
+        "word": "kite"
+      },
+      {
+        "code": 16,
+        "text": "kite,listen",
+        "behavior": "listening",
+        "word": "kite"
+      },
+      {
+        "code": 17,
+        "text": "though,(imagined)",
+        "behavior": "imagined",
+        "word": "though"
+      },
+      {
+        "code": 18,
+        "text": "though,(mimed)",
+        "behavior": "attempted",
+        "word": "though"
+      },
+      {
+        "code": 19,
+        "text": "though,listen",
+        "behavior": "listening",
+        "word": "though"
+      },
+      {
+        "code": 20,
+        "text": "were,(imagined)",
+        "behavior": "imagined",
+        "word": "were"
+      },
+      {
+        "code": 21,
+        "text": "were,(mimed)",
+        "behavior": "attempted",
+        "word": "were"
+      },
+      {
+        "code": 22,
+        "text": "were,listen",
+        "behavior": "listening",
+        "word": "were"
+      }
+    ],
+    "coverage": [
+      {
+        "part": "train",
+        "block": 3,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 3,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.32
+      },
+      {
+        "part": "train",
+        "block": 3,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "train",
+        "block": 3,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.04
+      },
+      {
+        "part": "train",
+        "block": 6,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 6,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 6,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 6,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.04
+      },
+      {
+        "part": "train",
+        "block": 7,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "train",
+        "block": 7,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 7,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 7,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.04
+      },
+      {
+        "part": "train",
+        "block": 8,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 8,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "train",
+        "block": 8,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 8,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.04
+      },
+      {
+        "part": "train",
+        "block": 9,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.34
+      },
+      {
+        "part": "train",
+        "block": 9,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.34
+      },
+      {
+        "part": "train",
+        "block": 9,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "train",
+        "block": 9,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.04
+      },
+      {
+        "part": "train",
+        "block": 10,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "train",
+        "block": 10,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 10,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "train",
+        "block": 10,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.04
+      },
+      {
+        "part": "train",
+        "block": 11,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 11,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "train",
+        "block": 11,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "train",
+        "block": 11,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.04
+      },
+      {
+        "part": "validation",
+        "block": 12,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.32
+      },
+      {
+        "part": "validation",
+        "block": 12,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "validation",
+        "block": 12,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "validation",
+        "block": 12,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.0600000000000005
+      },
+      {
+        "part": "test",
+        "block": 13,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "test",
+        "block": 13,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.32
+      },
+      {
+        "part": "test",
+        "block": 13,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.3
+      },
+      {
+        "part": "test",
+        "block": 13,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.04
+      },
+      {
+        "part": "test",
+        "block": 14,
+        "state": "imagined",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "test",
+        "block": 14,
+        "state": "attempted",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "test",
+        "block": 14,
+        "state": "listening",
+        "trials": 14,
+        "alignment": "go",
+        "epoch_seconds": 28.28
+      },
+      {
+        "part": "test",
+        "block": 14,
+        "state": "idle",
+        "trials": 2,
+        "alignment": "go",
+        "epoch_seconds": 4.04
+      }
+    ]
+  },
+  {
+    "subject": "t17",
+    "dt": 0.01,
+    "channels": 256,
+    "arrays": [
+      "s6v-v",
+      "s6v-d",
+      "55b"
+    ],
+    "split": {
+      "train": [
+        16,
+        17
+      ],
+      "validation": [
+        18
+      ],
+      "test": [
+        19
+      ]
+    },
+    "cues": [
+      {
+        "code": 1,
+        "text": "DO_NOTHING",
+        "behavior": "idle",
+        "word": ""
+      },
+      {
+        "code": 2,
+        "text": "ban (attempted)",
+        "behavior": "attempted",
+        "word": "ban"
+      },
+      {
+        "code": 3,
+        "text": "ban (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "ban"
+      },
+      {
+        "code": 4,
+        "text": "ban (passivelistening)",
+        "behavior": "listening",
+        "word": "ban"
+      },
+      {
+        "code": 5,
+        "text": "choice (attempted)",
+        "behavior": "attempted",
+        "word": "choice"
+      },
+      {
+        "code": 6,
+        "text": "choice (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "choice"
+      },
+      {
+        "code": 7,
+        "text": "choice (passivelistening)",
+        "behavior": "listening",
+        "word": "choice"
+      },
+      {
+        "code": 8,
+        "text": "day (attempted)",
+        "behavior": "attempted",
+        "word": "day"
+      },
+      {
+        "code": 9,
+        "text": "day (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "day"
+      },
+      {
+        "code": 10,
+        "text": "day (passivelistening)",
+        "behavior": "listening",
+        "word": "day"
+      },
+      {
+        "code": 11,
+        "text": "feel (attempted)",
+        "behavior": "attempted",
+        "word": "feel"
+      },
+      {
+        "code": 12,
+        "text": "feel (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "feel"
+      },
+      {
+        "code": 13,
+        "text": "feel (passivelistening)",
+        "behavior": "listening",
+        "word": "feel"
+      },
+      {
+        "code": 14,
+        "text": "kite (attempted)",
+        "behavior": "attempted",
+        "word": "kite"
+      },
+      {
+        "code": 15,
+        "text": "kite (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "kite"
+      },
+      {
+        "code": 16,
+        "text": "kite (passivelistening)",
+        "behavior": "listening",
+        "word": "kite"
+      },
+      {
+        "code": 17,
+        "text": "though (attempted)",
+        "behavior": "attempted",
+        "word": "though"
+      },
+      {
+        "code": 18,
+        "text": "though (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "though"
+      },
+      {
+        "code": 19,
+        "text": "though (passivelistening)",
+        "behavior": "listening",
+        "word": "though"
+      },
+      {
+        "code": 20,
+        "text": "were (attempted)",
+        "behavior": "attempted",
+        "word": "were"
+      },
+      {
+        "code": 21,
+        "text": "were (imaginedlistening)",
+        "behavior": "imagined",
+        "word": "were"
+      },
+      {
+        "code": 22,
+        "text": "were (passivelistening)",
+        "behavior": "listening",
+        "word": "were"
+      }
+    ],
+    "coverage": [
+      {
+        "part": "train",
+        "block": 16,
+        "state": "imagined",
+        "trials": 56,
+        "alignment": "go",
+        "epoch_seconds": 168.66
+      },
+      {
+        "part": "train",
+        "block": 16,
+        "state": "attempted",
+        "trials": 28,
+        "alignment": "go",
+        "epoch_seconds": 84.34
+      },
+      {
+        "part": "train",
+        "block": 16,
+        "state": "listening",
+        "trials": 28,
+        "alignment": "go",
+        "epoch_seconds": 84.36
+      },
+      {
+        "part": "train",
+        "block": 16,
+        "state": "idle",
+        "trials": 4,
+        "alignment": "go",
+        "epoch_seconds": 12.040000000000001
+      },
+      {
+        "part": "train",
+        "block": 17,
+        "state": "imagined",
+        "trials": 70,
+        "alignment": "go",
+        "epoch_seconds": 210.81
+      },
+      {
+        "part": "train",
+        "block": 17,
+        "state": "attempted",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.42
+      },
+      {
+        "part": "train",
+        "block": 17,
+        "state": "listening",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.44
+      },
+      {
+        "part": "train",
+        "block": 17,
+        "state": "idle",
+        "trials": 5,
+        "alignment": "go",
+        "epoch_seconds": 15.06
+      },
+      {
+        "part": "validation",
+        "block": 18,
+        "state": "imagined",
+        "trials": 70,
+        "alignment": "go",
+        "epoch_seconds": 210.81
+      },
+      {
+        "part": "validation",
+        "block": 18,
+        "state": "attempted",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.43
+      },
+      {
+        "part": "validation",
+        "block": 18,
+        "state": "listening",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.41
+      },
+      {
+        "part": "validation",
+        "block": 18,
+        "state": "idle",
+        "trials": 5,
+        "alignment": "go",
+        "epoch_seconds": 15.06
+      },
+      {
+        "part": "test",
+        "block": 19,
+        "state": "imagined",
+        "trials": 70,
+        "alignment": "go",
+        "epoch_seconds": 210.88
+      },
+      {
+        "part": "test",
+        "block": 19,
+        "state": "attempted",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.39
+      },
+      {
+        "part": "test",
+        "block": 19,
+        "state": "listening",
+        "trials": 35,
+        "alignment": "go",
+        "epoch_seconds": 105.41
+      },
+      {
+        "part": "test",
+        "block": 19,
+        "state": "idle",
+        "trials": 5,
+        "alignment": "go",
+        "epoch_seconds": 15.07
+      }
+    ]
+  }
+]

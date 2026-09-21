@@ -1,0 +1,10 @@
+{
+  "subjects": [
+    "t12",
+    "t15",
+    "t16",
+    "t17"
+  ],
+  "manifest_sha256": "d0b80dce7b74ec0416f22882e8bdcb89c78fa4f68f7092f849454270ee4bb363",
+  "metric_rows": 96
+}
