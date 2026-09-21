@@ -1,17 +1,49 @@
-# Inner-Speech Trigger Benchmark
+# Jev × Inner-Speech BCI
+
+### Can a BCI do more with less neural input?
 
 [中文说明](README_zh.md)
 
-A reproducible benchmark that asks two different questions of intracortical inner-speech data:
+This project started with a practical question rather than a new decoder architecture:
 
-1. **Event-aligned content:** if an instructed expression onset is already known, how much word identity is available in the next 250, 500, or 1,000 ms?
-2. **Autonomous output:** can the same simple models decide *when* to emit a word while controlling false and repeated outputs?
+> If a future BCI can recover only a few noisy bits of intent, can a fast semantic model help turn those bits into something useful without pretending to read more from the brain than it actually did?
 
-The second question is the harder and more useful systems test. A decoder that classifies a cued, pre-segmented trial does not yet provide a continuously usable BCI.
+That question led us to [Jev](https://docs.typesafe.ai/introduction), TypeSafe's System One model for typed judgments, choices, probabilities, and confidence. Jev looked interesting for a BCI because it can act as a structured semantic prior: application context proposes likely goals, neural evidence supplies the user's choice, and ordinary code decides whether there is enough evidence to act.
+
+We tested the attractive part first. In a separate synthetic interaction pilot, Jev reduced the number of simulated user inputs when context was informative. Then we tested the uncomfortable part: whether public intracortical inner-speech data could support the fast, autonomous expression event that such a system would need.
+
+The answer was mixed—and more useful than a clean demo:
+
+- **Jev showed an input-efficiency signal:** 94.2% task success with 6.507 mean inputs, versus 96.0% and 8.043 inputs for a local embedding baseline.
+- **The signal was not uniquely Jev:** a matched fast general-purpose LLM reached 94.2% with 6.128 inputs.
+- **Neural content could be strong for one participant:** T16 reached 78.6% seven-word accuracy from 500 ms of held-out data.
+- **Autonomous output was not solved:** every non-mute trigger violated the frozen validation constraints, so the only eligible policy stayed silent and missed all test expressions.
+
+This repository keeps all four facts together. Jev is the interaction-layer idea that motivated the experiment; the neural benchmark shows exactly where that idea still lacks a reliable control signal.
 
 ![Seven-word decoding across prefix lengths](figures/word_prefix.png)
 
-## Main result
+## Why Jev is interesting here
+
+Most language-model integrations generate text and then ask software to parse it. Jev instead returns structured decisions that code can combine directly. For a future BCI, that suggests a useful division of labor:
+
+```text
+neural evidence  +  Jev semantic prior  +  explicit decision rules
+      what?              likely goal              whether to act
+```
+
+The synthetic pilot supports this as a hypothesis, not yet as a product claim. Jev atomic features reduced inputs by 19.1% relative to the local embedding baseline while success decreased by 1.83 percentage points. A six-topic paired cluster bootstrap gave an exploratory 95% interval of 3.7%–30.5% for input reduction and −3.50–0.00 percentage points for the success difference.
+
+The benefit also depended on context. When the suggestion was uninformative, Jev atomic success fell to 87.3%; when it opposed the simulated user's target, success fell to 83.7%. The full sanitized aggregates are in [`results/jev_synthetic_pilot_summary.csv`](results/jev_synthetic_pilot_summary.csv) and the interpretation is in [JEV_EVALUATION.md](docs/JEV_EVALUATION.md).
+
+Jev was **not** used to extract neural features, fit neural classifiers, tune test results, or process participant data. No neural data were sent to TypeSafe or any other model provider. That boundary matters: a semantic prior may reduce interaction, but it cannot create neural information that was never decoded.
+
+## The neural benchmark
+
+The benchmark asks two questions that are easy to blur together:
+
+1. **Event-aligned content:** if an instructed expression onset is already known, how much word identity is available in the next 250, 500, or 1,000 ms?
+2. **Autonomous output:** can the same simple models decide *when* to emit a word while controlling false and repeated outputs across continuous recorded time?
 
 Using forward held-out recording blocks from four participants in the Stanford `interleavedVerbalBehaviors` dataset, shrinkage LDA reached the following seven-word inner-speech accuracies at 500 ms (chance: 14.3%):
 
@@ -22,42 +54,33 @@ Using forward held-out recording blocks from four participants in the Stanford `
 | T16 | **78.6%** | **22 / 28** |
 | T17 | 32.9% | 23 / 70 |
 
-T16 reached 11/14 in each of two held-out blocks. This is promising evidence of short-window word information for one participant, not evidence of uniform performance or unrestricted thought decoding.
+T16 reached 11/14 in each of two held-out blocks. This is promising short-window information for one participant, not uniform performance or unrestricted thought decoding.
 
-The fixed streaming rule did not pass the validation constraints with any non-mute threshold. The selected policy therefore emitted nothing and missed all 196 held-out inner-speech trials per model. Zero false outputs under a mute policy are reported as failure, not success.
+No non-mute streaming threshold passed the validation constraints. The selected policy emitted nothing and missed all 196 held-out inner-speech trials per model. Zero false outputs from a mute policy are reported as failure, not success.
 
-## What is new here?
+## What this work contributes
 
-The classifiers are intentionally standard: shrinkage LDA and diagonal-covariance LDA. Sliding windows and thresholded state machines are also not new algorithms. The contribution is the **evaluation contract**:
+The classifiers are intentionally standard: shrinkage LDA and diagonal-covariance LDA. The contribution is the **evaluation contract**:
 
 - recording-order block splits instead of random trial mixing;
 - train-only fitting and validation-only trigger selection;
 - prefix features with no test-block centering or temporal smoothing;
 - separate reporting of cued content decoding and autonomous triggering;
-- all misses, wrong words, duplicate outputs, and non-target exposure retained;
-- an explicit mute candidate so a policy cannot buy apparent safety and be called useful;
-- participant- and block-level results, including negative results.
+- false-output exposure covering all recorded time outside imagined GO epochs;
+- every miss, wrong word, duplicate, and negative result retained;
+- an explicit mute candidate that cannot be mislabeled as a useful interface;
+- participant- and block-level results rather than a pooled headline number.
 
-This repository should be described as a reproducible evaluation benchmark or methods case study. It is not a novel neural decoder and does not establish a new neuroscience mechanism. See [Novelty and claim boundaries](docs/NOVELTY_AND_SCOPE.md).
+The appropriate description is a reproducible evaluation benchmark and methods case study. It is not a new neural decoder or a new neuroscience mechanism. See [Novelty and claim boundaries](docs/NOVELTY_AND_SCOPE.md).
 
-## Data
+## Data and reproduction
 
-This repository does **not** redistribute neural data. Download `interleavedVerbalBehaviors.zip` from the official [Dryad dataset](https://datadryad.org/dataset/doi:10.5061/dryad.gf1vhhn1j), then extract it locally:
-
-```bash
-unzip interleavedVerbalBehaviors.zip
-```
+This repository does **not** redistribute neural data. Download `interleavedVerbalBehaviors.zip` from the official [Dryad dataset](https://datadryad.org/dataset/doi:10.5061/dryad.gf1vhhn1j), then extract it locally.
 
 Expected archive:
 
 - size: `777419058` bytes
 - SHA-256: `19f90f09f2ea32f1428b7cc1c7dd8c0606dfbc988c57fcaf64aea03e77b9d409`
-
-The data are anonymized by the source authors and identified only as T12, T15, T16, and T17. Follow the source dataset's terms and citation requirements. See [DATA.md](DATA.md).
-
-## Reproduce
-
-Python 3.11 is recommended.
 
 ```bash
 python -m venv .venv
@@ -75,28 +98,22 @@ inner-speech-report \
 pytest
 ```
 
-For the exact environment used to create the committed tables, install `requirements-lock.txt` instead and consult [`runtime_environment.json`](runtime_environment.json) for the Python, platform, BLAS, and thread settings.
-
-The benchmark performs 96 model/task/window fits plus 49 within-training-block label permutations for every 500 ms task. Runtime depends on BLAS and CPU speed. Provider APIs are neither required nor called.
+For the exact release environment, use `requirements-lock.txt` and consult [`runtime_environment.json`](runtime_environment.json). The neural benchmark requires no provider API and makes no external model calls.
 
 ## Repository map
 
-- `src/inner_speech_benchmark/`: data validation, feature extraction, LDA baselines, streaming trigger, and report generation.
-- `results/`: complete derived CSV tables from the frozen neural run plus a sanitized aggregate table from the separate Jev pilot; no raw neural arrays or provider payloads.
-- `results/manifest.json`, `results/COMPLETED.json`, `runtime_environment.json`, and `CHECKSUMS.sha256`: input/code hashes, completion state, exact runtime, and artifact integrity.
+- `src/inner_speech_benchmark/`: feature extraction, LDA baselines, streaming trigger, and reports.
+- `results/`: complete frozen neural results and the sanitized Jev pilot aggregate.
 - `figures/`: publication-ready PNG and PDF summaries.
-- `docs/METHODS.md`: exact split, feature, model, null, and streaming definitions.
+- `docs/METHODS.md`: exact split, feature, null, and streaming definitions.
 - `docs/RESULTS.md`: participant-level results and limitations.
-- `docs/JEV_EVALUATION.md`: where Jev was evaluated, what it helped with, and why it was not included in neural decoding.
-- `tests/`: temporal-boundary and scoring invariants.
-
-## Jev disclosure
-
-[Jev](https://docs.typesafe.ai/introduction) was evaluated before this neural benchmark as a typed semantic prior in a separate synthetic interaction pilot. It reduced simulated user inputs under favorable context, but the gain was not unique relative to simpler or general-purpose alternatives and degraded when context was uninformative or misleading. Jev was therefore **not used** to extract neural features, fit neural classifiers, select test results, or process participant data. No neural data were sent to TypeSafe or any other model provider. Full aggregate results and scope are in [JEV_EVALUATION.md](docs/JEV_EVALUATION.md).
+- `docs/JEV_EVALUATION.md`: Jev protocol, results, stress tests, and claim boundaries.
+- `results/manifest.json`, `runtime_environment.json`, and `CHECKSUMS.sha256`: provenance and integrity.
+- `tests/`: temporal, split, exposure, and scoring invariants.
 
 ## Citation and attribution
 
-Benchmark author and maintainer: [Dililianxice](https://github.com/Dililianxice). Machine-readable citation metadata are in [CITATION.cff](CITATION.cff).
+Benchmark author and maintainer: [Dililianxice](https://github.com/Dililianxice). Machine-readable metadata are in [CITATION.cff](CITATION.cff).
 
 If you reuse this benchmark, cite this repository, the original study, and the dataset:
 
@@ -106,8 +123,8 @@ If you reuse this benchmark, cite this repository, the original study, and the d
 
 > Kunz, E., Abramovich Krasa, B., Kamdar, F., et al. (2025). *Inner speech in motor cortex and implications for speech neuroprostheses* [Dataset]. Dryad. https://doi.org/10.5061/dryad.gf1vhhn1j
 
-The benchmark code, documentation, and figures are released under the [MIT License](LICENSE). Derived CSV and JSON tables are dedicated under [CC0 1.0](LICENSE-DATA.md). The original data and source study remain the work of their authors and are governed by their own terms.
+Code, documentation, and figures use the [MIT License](LICENSE). Derived CSV and JSON tables use [CC0 1.0](LICENSE-DATA.md).
 
 ## Responsible interpretation
 
-The task uses prompted words and known task epochs. Word identity may contain cue memory, preparation, and production-related activity. “Go-relative latency” is not the onset time of a private thought. Four participants, one session each, and only 4–5 idle test trials per participant do not support claims about long-term safety, cross-day stability, or arbitrary thought reading.
+The words and task epochs were prompted. Decodable activity may include cue memory, preparation, and inner-speech execution. GO-relative latency is not private-thought onset. Four participants, one session each, and only 4–5 idle test trials per participant do not establish cross-day stability, daily-life safety, or arbitrary thought reading.
