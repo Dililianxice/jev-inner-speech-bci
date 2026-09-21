@@ -95,7 +95,7 @@ pytest
 
 ## 作者、许可与引用
 
-仓库作者和维护者为 [Dililianxice](https://github.com/Dililianxice)。代码、说明和图使用 MIT 许可；派生 CSV/JSON 表使用 CC0 1.0。使用时请引用本仓库、原始 Cell 论文和 Dryad 数据，机器可读信息见 [`CITATION.cff`](CITATION.cff)。
+仓库作者和维护者为 [Dililianxice](https://github.com/Dililianxice)。代码、说明和图使用 MIT 许可；派生 CSV/JSON 表使用 CC0 1.0。使用时请引用 *Jev × Inner-Speech BCI*、原始 Cell 论文和 Dryad 数据，机器可读信息见 [`CITATION.cff`](CITATION.cff)。
 
 ## 解释边界
 
